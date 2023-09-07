@@ -1,6 +1,10 @@
+<!--参考サイト https://zenn.dev/yurukei20/articles/9741118bfb5ee0 -->
+
+
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScbDZsb1cOgc5oD_1bRw1wr-FxKJ-crGCiHQv4-XqLqA5nz9A/formResponse" target="_self" method="POST" id="mG61Hd" class="wrapper">
+
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScbDZsb1cOgc5oD_1bRw1wr-FxKJ-crGCiHQv4-XqLqA5nz9A/formResponse" method="POST" id="mG61Hd" class="wrapper" target="hidden_iframe" onsubmit="submitted=true;">
     <!-- <div class="contents"> -->
 
     <div class="title box">
@@ -8,37 +12,41 @@
     </div>
     <div class="user-id box">
         <h2 class="question">被験者番号</h2>
-        <input type="text" name="id" autocomplete="id">
+        <input type="text" name="id" autocomplete="id" required>
     </div>
     <div class="box">
         <h2 class="question">実験条件</h2>
-        <input type="text" name="">
+        <input type="text" name="entry.366340186" required>
     </div>
-    <div class="form-text box">
-        <!-- <label for="exampleInputEmail1">自由記述</label><br> -->
-        <h2 class="question">自由記述</h2>
-        <textarea name="entry.366340186" class="form-control text-area" rows="3" required></textarea><br>
-    </div>
+
+
     <!-- ここからスライダー -->
     <div class="form-slider box">
         <h2 class="question">スライダー</h2>
-        <input class="slider" type="range" name="entry.721419540" value="0.5" min="0" max="1" step="0.0001" oninput="document.getElementById('output1').value=this.value" required>
+        <div class="slider-wrapper">
+            <input class="slider" type="range" name="entry.721419540" value="0.5" min="0" max="1" step="0.0001" oninput="document.getElementById('output1').value=this.value" required>
+        </div>
+        <div style="float: left; padding-top: 10px;">全く思わない</div>
+        <div style="float: right; padding-top: 10px;">全く思う</div>
+
         <br>
-        <!-- <label>全くそう思わない</label>
-        <label style="float: right; ">全くそう思う</label> -->
-        <!-- <output id="output1">0.5</output> -->
     </div>
     <!-- ここまでスライダー -->
+
+
+    <!-- ここから自由記述 -->
     <div class="form-text box">
-        <!-- <label for="exampleInputEmail1">自由記述</label><br> -->
         <h2 class="question">自由記述</h2>
         <textarea name="entry.61489854" class="form-control text-area" rows="3" required></textarea><br>
-
     </div>
+    <!-- ここまで自由記述 -->
+
+    <!-- ここから提出ボタン -->
     <div class="submit">
         <button type="submit" class="btn btn-primary">送信</button>
     </div>
-    <!-- </div> -->
+    <!-- ここまで提出ボタン -->
+
 
 </form>
 
@@ -48,7 +56,6 @@
     input[type="range"]::-webkit-slider-runnable-track {
         background: #c8c8c8;
         height: 5px;
-        /* padding-top: 6px; */
     }
     /* Thumb: Chrome, Safari, Opera, Edge Chromium */
     
@@ -57,7 +64,6 @@
         appearance: none; */
         margin-top: -5px;
         background-color: #808080;
-        /* border-radius: 50%; */
     }
     
     .wrapper {
@@ -77,35 +83,34 @@
         border: 2px solid #000;
         border-radius: 15px;
         padding: 5%;
-        /* margin: 20px; */
     }
     
     .text-area {
         width: 100%;
     }
     
+    .slider-wrapper {
+        text-align: center;
+    }
+    
     .slider {
-        width: 100%;
+        width: 90%;
         accent-color: black;
     }
     
     .submit {
         width: 80%;
         margin: 0.5em auto;
-        /* background-color: black; */
         text-align: right;
         padding: 5%;
-        /* float: right; */
     }
     
     .btn {
         width: 15%;
         height: 40px;
-        /* background-color: #808080; */
         color: black;
         background-color: #ffffff;
-        border-color: aqua;
-        /* border-radius: 5px; */
+        /* border-color: aqua; */
         border: 1px solid black;
     }
     
@@ -121,10 +126,6 @@
             flex-direction: column;
             width: 100%;
         }
-        /* .slider { */
-        /* width: 100%; */
-        /* width: 300px; */
-        /* } */
         /* input[type="range"]::-webkit-slider-runnable-track { */
         /* background: #c8c8c8; */
         /* height: 5px; */
@@ -146,3 +147,10 @@
         }
     }
 </style>
+
+<script type="text/javascript">
+    let submitted = false;
+</script>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='https://ydhrt.github.io/form_test/';}">
+</iframe>
