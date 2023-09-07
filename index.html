@@ -5,17 +5,20 @@
         <h1>タイトル</h1>
     </div>
     <div class="form-text box">
-        <label for="exampleInputEmail1">自由記述</label><br>
+        <!-- <label for="exampleInputEmail1">自由記述</label><br> -->
+        <h2 class="question">自由記述</h2>
         <textarea name="entry.366340186" class="form-control text-area" rows="3" required></textarea><br>
     </div>
     <div class="form-slider box">
-        <label for="exampleInputEmail1">スライダー</label><br>
+        <!-- <label for="exampleInputEmail1">スライダー</label><br> -->
+        <h2 class="question">スライダー</h2>
         <input type="range" name="entry.721419540" value="0.5" min="0" max="1" step="0.0001" oninput="document.getElementById('output1').value=this.value" style="accent-color:black; width: 80%;">
         <br><label for="exampleInputEmail1">全くそう思わない<label for="exampleInputEmail1">全くそう思う</label>
         <!-- <output id="output1">0.5</output> -->
     </div>
     <div class="form-text box">
-        <label for="exampleInputEmail1">自由記述</label><br>
+        <!-- <label for="exampleInputEmail1">自由記述</label><br> -->
+        <h2 class="question">自由記述</h2>
         <textarea name="entry.61489854" class="form-control text-area" rows="3" required></textarea><br>
         <button type="submit" class="btn btn-primary">送信</button>
     </div>
@@ -29,21 +32,14 @@
     input[type="range"]::-webkit-slider-runnable-track {
         background: #c8c8c8;
         height: 5px;
-        /* height: 30%; */
-        /* border-radius: 8px; */
     }
     /* Thumb: Chrome, Safari, Opera, Edge Chromium */
     
     input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        /* height: 50%;
-        width: 50%; */
-        /* height: 20px; */
-        /* width: 20px; */
-        margin-top: -1%;
-        /* margin-top: -5px; */
-        /* 位置の調整が必要*/
+        /* margin-top: -1%; */
+        margin-top: -5px;
         border-radius: 50%;
         background-color: #808080;
         background: #808080;
@@ -51,37 +47,25 @@
     
     .wrapper {
         margin: 0 auto;
-        /* text-align: center; */
-        background-color: aqua;
-        /* position: relative; */
         display: flex;
-        /* justify-content: center; */
         flex-direction: column;
-        /* width: 800px; */
         width: 50%;
     }
     
     .contents {
-        /* position: absolute; */
-        /* top: 0; */
-        /* left: 50%; */
-        /* transform: translateX(-50%); */
-        /* width: 800px; */
-        /* width: 80%; */
         background-color: black;
     }
     
     .box {
-        /* padding: 1em; */
         width: 80%;
-        /* background-color: black; */
         margin: 0.5em auto;
-        /* align-items: center;
-        justify-content: center; */
+        border: 2px solid #000;
+        border-radius: 15px;
+        padding: 5%;
+        /* margin: 20px; */
     }
     
     .text-area {
-        /* width: 550px; */
         width: 80%;
     }
 </style>
