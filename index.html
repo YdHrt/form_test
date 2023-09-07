@@ -11,13 +11,16 @@
         <h2 class="question">自由記述</h2>
         <textarea name="entry.366340186" class="form-control text-area" rows="3" required></textarea><br>
     </div>
+    <!-- ここからスライダー -->
     <div class="form-slider box">
-        <!-- <label for="exampleInputEmail1">スライダー</label><br> -->
         <h2 class="question">スライダー</h2>
-        <input type="range" name="entry.721419540" value="0.5" min="0" max="1" step="0.0001" oninput="document.getElementById('output1').value=this.value" style="accent-color:black; width: 80%;">
-        <br><label for="exampleInputEmail1">全くそう思わない<label for="exampleInputEmail1">全くそう思う</label>
+        <input class="slider" type="range" name="entry.721419540" value="0.5" min="0" max="1" step="0.0001" oninput="document.getElementById('output1').value=this.value" style="accent-color:black; " required>
+        <br>
+        <label>全くそう思わない</label>
+        <label style="float: right; ">全くそう思う</label>
         <!-- <output id="output1">0.5</output> -->
     </div>
+    <!-- ここまでスライダー -->
     <div class="form-text box">
         <!-- <label for="exampleInputEmail1">自由記述</label><br> -->
         <h2 class="question">自由記述</h2>
@@ -71,7 +74,11 @@
     }
     
     .text-area {
-        width: 80%;
+        width: 100%;
+    }
+    
+    .slider {
+        width: 100%;
     }
     
     @media screen and (max-width: 768px) {
@@ -81,6 +88,9 @@
             flex-direction: column;
             width: 100%;
             background-color: aqua;
+        }
+        .slider {
+            width: 100%;
         }
     }
 </style>
